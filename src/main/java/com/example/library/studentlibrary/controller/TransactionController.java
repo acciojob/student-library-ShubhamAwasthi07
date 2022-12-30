@@ -14,14 +14,14 @@ public class TransactionController {
     @Autowired
     TransactionService transactionService;
     //Add required annotations
-    @PostMapping("/transaction/issueBook")
+    @PostMapping("transaction/issueBook")
     public ResponseEntity issueBook(@RequestParam("cardId") int cardId, @RequestParam("bookId") int bookId) throws Exception{
         transactionService.issueBook(cardId, bookId);
        return new ResponseEntity<>("transaction completed", HttpStatus.ACCEPTED);
     }
 
     //Add required annotations
-    @PostMapping("/transaction/returnBook")
+    @PostMapping("transaction/returnBook")
     public ResponseEntity returnBook(@RequestParam("cardId") int cardId, @RequestParam("bookId") int bookId) throws Exception{
         transactionService.returnBook(cardId, bookId);
         return new ResponseEntity<>("transaction completed", HttpStatus.ACCEPTED);
